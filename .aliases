@@ -1,11 +1,13 @@
 # my lovely alias
 ## for mac
 alias home="cd ~/Documents/"
+alias repos="cd ~/Documents/repos"
 
 ## git
 alias g="git"
 alias greset="git reset --hard HEAD\^"
 alias gl="git log --color --graph"
+alias glog="git log"
 alias gmerged="git branch --merged | grep -v '*' | xargs -I % git branch -d %"
 alias glocal="git branch | egrep -v '\*|develop|master' | xargs git branch -D"
 alias gpu="git pull"
