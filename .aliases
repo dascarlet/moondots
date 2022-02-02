@@ -1,0 +1,39 @@
+# my lovely alias
+## for mac
+alias home="cd ~/Documents/"
+
+## git
+alias g="git"
+alias greset="git reset --hard HEAD\^"
+alias gl="git log --color --graph"
+alias gmerged="git branch --merged | grep -v '*' | xargs -I % git branch -d %"
+alias glocal="git branch | egrep -v '\*|develop|master' | xargs git branch -D"
+alias gpu="git pull"
+alias gst="git status"
+alias gc="git commit -v"
+alias gd="git diff"
+alias gch='git branch -a --sort=-authordate | cut -b 3- | perl -pe '\''s#^remotes/origin/###'\'' | perl -nlE '\''say if !$c{$_}++'\'' | grep -v -- "->" | peco | xargs git checkout'
+alias gpo='git push origin --set-upstream $(git rev-parse --abbrev-ref HEAD)'
+
+## zsh
+alias zshrc="vi ~/.zshrc"
+alias szsh="source ~/.zshrc"
+
+# weather
+alias tenki="curl -4 wttr.in/Tokyo"
+
+# vim
+alias v="vim"
+
+# tmux reload
+alias tmux-reload="tmux source-file ~/.tmux.conf"
+
+# trans
+alias tn="trans :ja"
+
+# kubernetes
+alias k="kubectl"
+
+# python
+alias pip="pip3"
+alias python="python3"

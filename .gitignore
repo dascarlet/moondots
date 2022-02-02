@@ -1,0 +1,45 @@
+# init
+/.*
+!drop.sh
+
+# non-ignore targets
+!/.gitconfig
+!/.gitignore
+!/.gitmessage.txt
+!/.vimrc
+!/.zshenv
+!/.zshrc
+!/.aliases
+!/.tmux.conf
+
+# IDE
+.idea
+.idea/*
+
+# Vagrant
+.vagrant
+Vagrantfile
+
+# PHP
+vendor
+
+# node
+# bower_components
+node_modules
+.yarn/
+
+# direnv
+.envrc
+
+# python
+venv/*
+
+# other files
+.DS_Store
+hosts
+phpunit.xml.dist
+Doxyfile
+check_branch.sh
+tool/*
+rebuild.txt
+test.php

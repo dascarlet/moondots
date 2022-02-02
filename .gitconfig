@@ -1,0 +1,32 @@
+[push]
+  default = simple
+
+[user]
+  name = kz-scarlet
+  email = kzbandai@yahoo.co.jp
+
+[color]
+  ui = true
+
+[alias]
+  lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+  review = diff origin/master...
+
+[core]
+  excludesfile = ~/.gitignore
+  whitespace = trailing-space,space-before-tab
+
+[fetch]
+	prune = true
+[ghq]
+	root = /Users/kz-scarlet/go/src
+[credential]
+	helper = osxkeychain
+[rebase]
+	autosquash = true
+[commit]
+	verbose = true
+[url "git@github.com:"]
+	insteadOf = https://github.com/
+[pull]
+	rebase = false
