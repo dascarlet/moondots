@@ -2,6 +2,7 @@
 
 ## oh-my-zsh plugins
 plugins=(
+  git
   zsh-kubectl-prompt
   docker
   zsh-syntax-highlighting
@@ -94,12 +95,6 @@ export NVM_DIR="$HOME/.nvm"
 ## for kubernetes completion
 source <(kubectl completion zsh)
 
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/kz-scarlet/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/kz-scarlet/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/kz-scarlet/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/kz-scarlet/google-cloud-sdk/completion.zsh.inc'; fi
-
 # for stern
 source <(stern --completion=zsh)
 
@@ -127,5 +122,12 @@ fi
 [ -f ~/.aliases ] && source ~/.aliases
 
 # for auto complete
-autoload -U compinit
+fpath=($HOME/.zsh/completion $fpath)
+autoload -Uz compinit
 compinit
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/kz-scarlet/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/kz-scarlet/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/kz-scarlet/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/kz-scarlet/google-cloud-sdk/completion.zsh.inc'; fi

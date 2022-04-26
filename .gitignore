@@ -43,3 +43,6 @@ check_branch.sh
 tool/*
 rebuild.txt
 test.php
+
+# debug
+*-debug.log
