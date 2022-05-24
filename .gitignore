@@ -12,6 +12,8 @@
 !/.aliases
 !/.tmux.conf
 
+!/.github
+
 # IDE
 .idea
 .idea/*
