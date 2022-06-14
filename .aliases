@@ -9,7 +9,7 @@ alias greset="git reset --hard HEAD\^"
 alias gl="git log --color --graph"
 alias glog="git log"
 alias gmerged="git branch --merged | grep -v '*' | xargs -I % git branch -d %"
-alias glocal="git branch | egrep -v '\*|develop|master' | xargs git branch -D"
+alias glocal="git branch | egrep -v '\*|develop|master|main' | xargs git branch -D"
 alias gpu="git pull"
 alias gst="git status"
 alias gc="git commit -v"
@@ -22,7 +22,7 @@ alias zshrc="vi ~/.zshrc"
 alias szsh="source ~/.zshrc"
 
 # weather
-alias tenki="curl -4 wttr.in/Tokyo"
+alias tenki="curl -4 wttr.in/Nagoya"
 
 # vim
 alias v="vim"
