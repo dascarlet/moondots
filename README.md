@@ -1,11 +1,11 @@
 # moondots
 
-dotfiles for kz-scarlet
+dotfiles for dascarlet
 
 ### usage
 ```
 cd ~
-git clone git@github.com:kz-scarlet/moondots.git
+git clone git@github.com:dascarlet/moondots.git
 cd moondots
 ./drop.sh
 ```
