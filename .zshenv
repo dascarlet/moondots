@@ -3,6 +3,7 @@
 typeset -U path
 
 path=(
+  /opt/homebrew/bin(N-/)
   /bin(N-/)
   /sbin(N-/)
   /usr/local(N-/)
@@ -11,7 +12,6 @@ path=(
   /usr/local/anaconda3/bin(N-/)
   /usr/bin(N-/)
   /usr/sbin(N-/)
-  /opt/homebrew/bin(N-/)
   
   # for heroku
   /usr/local/heroku/bin(N-/)

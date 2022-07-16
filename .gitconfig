@@ -1,8 +1,9 @@
 [push]
   default = simple
+  autoSetupRemote = true
 
 [user]
-  name = sw-scarlet
+  name = dascarlet
   email = nisigin@gmail.com
 
 [color]
