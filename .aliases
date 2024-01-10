@@ -39,3 +39,6 @@ alias k="kubectl"
 # python
 alias pip="pip3"
 alias python="python3"
+
+# terraform
+alias tf="terraform"

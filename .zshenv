@@ -3,7 +3,13 @@
 typeset -U path
 
 path=(
+  # for homebrew
   /opt/homebrew/bin(N-/)
+  /opt/homebrew/sbin(N-/)
+
+  # for fig
+  ~/.local/bin
+
   /bin(N-/)
   /sbin(N-/)
   /usr/local(N-/)
@@ -22,6 +28,7 @@ path=(
   ~/.anyenv/envs/pyenv/bin(N-/)
   ~/.anyenv/envs/nodenv/bin(N-/)
   ~/.nodenv/shims(N-/)
+  ~/.nodenv/bin(N-/)
 
   # for haskell
   ~/.cabal/bin(N-/)
@@ -36,4 +43,13 @@ path=(
 
   # helm
   /usr/local/opt/helm@2/bin(N-/)
+
+  # Python
+  ~/Library/Python/3.9/bin(N-/)
+
+  # for Go
+  ~/go/bin(N-/)
+
+  # for yarn global
+  ~/.yarn/bin(N-/)
 )
