@@ -16,6 +16,7 @@ alias gc="git commit -v"
 alias gd="git diff"
 alias gch='git branch -a --sort=-authordate | cut -b 3- | perl -pe '\''s#^remotes/origin/###'\'' | perl -nlE '\''say if !$c{$_}++'\'' | grep -v -- "->" | peco | xargs git checkout'
 alias gpo='git push origin --set-upstream $(git rev-parse --abbrev-ref HEAD)'
+alias gmm='git merge main'
 
 ## zsh
 alias zshrc="vi ~/.zshrc"

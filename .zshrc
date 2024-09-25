@@ -1,5 +1,3 @@
-# Fig pre block. Keep at the top of this file.
-[[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.pre.zsh"
 # zsh config
 
 ## oh-my-zsh plugins
@@ -135,9 +133,6 @@ if [ -f '/Users/kz-scarlet/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/kz-s
 if [ -f '/Users/kz-scarlet/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/kz-scarlet/google-cloud-sdk/completion.zsh.inc'; fi
 
 source /Users/kz-scarlet/.docker/init-zsh.sh || true # Added by Docker Desktop
-
-# Fig post block. Keep at the bottom of this file.
-[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
 
 # pnpm
 export PNPM_HOME="/Users/kz-scarlet/Library/pnpm"
