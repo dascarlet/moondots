@@ -12,6 +12,7 @@
 [alias]
   lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
   review = diff origin/master...
+  new = "!f() { git switch -c \"$1\" && git commit --allow-empty -m \"Initial empty commit\"; }; f"
 
 [core]
   excludesfile = ~/.gitignore
