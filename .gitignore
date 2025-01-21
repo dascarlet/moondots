@@ -26,9 +26,9 @@ Vagrantfile
 vendor
 
 # node
-# bower_components
 node_modules
 .yarn/
+storybook-static/
 
 # direnv
 .envrc

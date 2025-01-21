@@ -52,4 +52,7 @@ path=(
 
   # for yarn global
   ~/.yarn/bin(N-/)
+
+  # for Rust
+  ~/.cargo/bin(N-/)
 )
