@@ -95,9 +95,6 @@ export NVM_DIR="$HOME/.nvm"
 ## for kubernetes completion
 source <(kubectl completion zsh)
 
-# for stern
-source <(stern --completion=zsh)
-
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
 # for iTerm2 status bar
