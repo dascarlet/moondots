@@ -6,7 +6,7 @@ path=(
   # for homebrew
   /opt/homebrew/bin(N-/)
   /opt/homebrew/sbin(N-/)
-  /opt/homebrew/opt/postgresql@15/bin(N-/)
+  /opt/homebrew/opt/libpq/bin(N-/)
 
   # for fig
   ~/.local/bin
