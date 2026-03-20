@@ -123,18 +123,3 @@ fpath=($HOME/.zsh/completion $fpath)
 autoload -Uz compinit
 compinit
 
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/kz-scarlet/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/kz-scarlet/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/kz-scarlet/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/kz-scarlet/google-cloud-sdk/completion.zsh.inc'; fi
-
-source /Users/kz-scarlet/.docker/init-zsh.sh || true # Added by Docker Desktop
-
-# pnpm
-export PNPM_HOME="/Users/kz-scarlet/Library/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
-# pnpm end
