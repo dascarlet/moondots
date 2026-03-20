@@ -3,7 +3,6 @@
 ## oh-my-zsh plugins
 plugins=(
   git
-  zsh-kubectl-prompt
   docker
   zsh-syntax-highlighting
 )
@@ -92,16 +91,7 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-## for kubernetes completion
-source <(kubectl completion zsh)
-
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
-
-# for iTerm2 status bar
-iterm2_print_user_vars() {
-  iterm2_set_user_var kubecontext $(kubectl config current-context)
-}
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 # for phpstorm terminal
 [[ -f ~/.zshenv ]] && source ~/.zshenv
