@@ -3,6 +3,7 @@
 !drop.sh
 
 # non-ignore targets
+!/.claude
 !/.gitconfig
 !/.gitignore
 !/.gitmessage.txt
