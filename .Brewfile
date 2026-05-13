@@ -25,7 +25,7 @@ brew "openjdk@17"
 brew "parallel"
 brew "peco"
 brew "php"
-brew "postgresql@17", restart_service: :changed
+brew "postgresql@17"
 brew "procs"
 brew "python@3.10"
 brew "r"
