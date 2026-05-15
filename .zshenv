@@ -9,7 +9,9 @@ path=(
   /opt/homebrew/opt/libpq/bin(N-/)
 
   # for fig
-  ~/.local/bin
+  ~/.local/bin(N-/)
+
+  ~/.local/bin/mise activate zsh(N-/)
 
   /bin(N-/)
   /sbin(N-/)
@@ -56,4 +58,7 @@ path=(
 
   # for Rust
   ~/.cargo/bin(N-/)
+
+  # for Toolbox
+  ~/Library/Application\ Support/JetBrains/Toolbox/scripts(N-/)
 )

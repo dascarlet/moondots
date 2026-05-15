@@ -53,3 +53,9 @@ test.php
 
 # debug
 *-debug.log
+
+# mise
+mise.toml
+
+# claude code skills
+skills/

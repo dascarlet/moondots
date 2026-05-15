@@ -96,12 +96,6 @@ export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 # for phpstorm terminal
 [[ -f ~/.zshenv ]] && source ~/.zshenv
 
-export PYENV_ROOT="$HOME/.anyenv/envs/pyenv"
-eval "$(pyenv init --path)"
-if command -v pyenv 1>/dev/null 2>&1; then
-  eval "$(pyenv init -)"
-fi
-
 # source local
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
 
@@ -113,3 +107,15 @@ fpath=($HOME/.zsh/completion $fpath)
 autoload -Uz compinit
 compinit
 
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/kz-scarlet/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/kz-scarlet/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/kz-scarlet/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/kz-scarlet/google-cloud-sdk/completion.zsh.inc'; fi
+
+# for ruby
+eval "$(mise activate zsh)"
+
+# for nvm
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
