@@ -7,10 +7,10 @@ dotfiles for dascarlet
 cd ~
 git clone git@github.com:dascarlet/moondots.git
 cd moondots
-./drop.sh        # uses GNU stow if available, otherwise plain symlinks
+./drop.sh
 ```
 
-`drop.sh` is idempotent — re-run it after pulling changes.
+`drop.sh` is idempotent — re-run it after pulling changes. Existing non-symlink files at the target are kept (skipped with a warning).
 
 ### install homebrew packages
 ```
