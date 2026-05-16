@@ -1,27 +1,47 @@
 # moondots
 
-dotfiles for dascarlet
+dotfiles for dascarlet, managed with [chezmoi](https://www.chezmoi.io/).
 
-### usage
-```
-cd ~
-git clone git@github.com:dascarlet/moondots.git
-cd moondots
-./drop.sh
-```
+## Initial setup (new machine)
 
-`drop.sh` is idempotent — re-run it after pulling changes. Existing non-symlink files at the target are kept (skipped with a warning).
-
-### install homebrew packages
-```
+```sh
 xcode-select --install
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+brew install chezmoi
+chezmoi init --source ~/moondots git@github.com:dascarlet/moondots.git
+chezmoi apply
 brew bundle --global
+$(brew --prefix)/opt/fzf/install
 ```
 
-After installing fzf for the first time, run `$(brew --prefix)/opt/fzf/install` to generate `~/.fzf.zsh`.
+`--source ~/moondots` makes chezmoi use this repo location instead of the default `~/.local/share/chezmoi`.
 
-### dump homebrew packages
+## Workflow
+
+The source files live in `~/moondots` with the `dot_` prefix (e.g. `dot_zshrc` → `~/.zshrc`). Edit either the source files directly or via:
+
+```sh
+chezmoi edit ~/.zshrc      # opens dot_zshrc in $EDITOR
+chezmoi diff               # preview what would change in $HOME
+chezmoi apply              # write changes from source to $HOME
+chezmoi cd                 # cd to source dir (~/moondots)
 ```
-brew bundle dump --global
+
+To pull updates from remote and apply them:
+
+```sh
+chezmoi update             # git pull + apply
+```
+
+To add a new dotfile that already exists in `$HOME`:
+
+```sh
+chezmoi add ~/.foorc
+```
+
+## Brewfile maintenance
+
+```sh
+brew bundle --global       # install everything in ~/.Brewfile
+brew bundle dump --global  # regenerate ~/.Brewfile from current state
 ```
