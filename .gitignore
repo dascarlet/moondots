@@ -1,61 +1,12 @@
-# init
-/.*
-!drop.sh
+# Claude Code local settings (.claude is not managed; only local state lives here)
+.claude/settings.local.json
+.claude/scheduled_tasks.lock
 
-# non-ignore targets
-!/.claude
-!/.gitconfig
-!/.gitignore
-!/.gitmessage.txt
-!/.vimrc
-!/.zshenv
-!/.zshrc
-!/.aliases
-!/.tmux.conf
-
-!/.github
-
-# Claude Code local settings
-/.claude/settings.local.json
-/.claude/scheduled_tasks.lock
-
-# IDE
-.idea
-.idea/*
-
-# Vagrant
-.vagrant
-Vagrantfile
-
-# PHP
-vendor
-
-# node
-node_modules
-.yarn/
-storybook-static/
-
-# direnv
-.envrc
-
-# python
-venv/*
-
-# other files
+# OS
 .DS_Store
-hosts
-phpunit.xml.dist
-Doxyfile
-check_branch.sh
-tool/*
-rebuild.txt
-test.php
 
 # debug
 *-debug.log
 
-# mise
-mise.toml
-
-# claude code skills
-skills/
+# chezmoi local artifacts
+chezmoi.toml.local
