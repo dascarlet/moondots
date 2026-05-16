@@ -1,7 +1,19 @@
 # zsh config
 
-# prompt
-command -v starship >/dev/null && eval "$(starship init zsh)"
+## oh-my-zsh plugins
+plugins=(
+  git
+  docker
+  zsh-syntax-highlighting
+)
+
+# oh-my-zsh
+export ZSH=$HOME/.oh-my-zsh
+ZSH_THEME="wedisagree"
+[ -f $ZSH/oh-my-zsh.sh ] && source $ZSH/oh-my-zsh.sh
+export ZSH_THEME_GIT_PROMPT_MODIFIED="%{$fg[yellow]%} ♜"
+export ZSH_THEME_GIT_PROMPT_UNMERGED="%{$fg[magenta]%} ♣"
+export ZSH_THEME_GIT_PROMPT_AHEAD="%{$fg[blue]%} ✤"
 
 # lang
 export LC_CTYPE="en_US.UTF-8"
