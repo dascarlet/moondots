@@ -8,10 +8,8 @@ path=(
   /opt/homebrew/sbin(N-/)
   /opt/homebrew/opt/libpq/bin(N-/)
 
-  # for fig
+  # mise / user-local binaries
   ~/.local/bin(N-/)
-
-  ~/.local/bin/mise activate zsh(N-/)
 
   /bin(N-/)
   /sbin(N-/)
@@ -24,14 +22,6 @@ path=(
   
   # for heroku
   /usr/local/heroku/bin(N-/)
-
-  # for anyenv
-  ~/.anyenv/bin(N-/)
-  ~/.phpenv/bin(N-/)
-  ~/.anyenv/envs/pyenv/bin(N-/)
-  ~/.anyenv/envs/nodenv/bin(N-/)
-  ~/.nodenv/shims(N-/)
-  ~/.nodenv/bin(N-/)
 
   # for haskell
   ~/.cabal/bin(N-/)

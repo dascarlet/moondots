@@ -10,7 +10,7 @@ plugins=(
 # oh-my-zsh
 export ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="wedisagree"
-[ -f $ZSH/oh-my-zsh.sh  ] && source $ZSH/oh-my-zsh.sh
+[ -f $ZSH/oh-my-zsh.sh ] && source $ZSH/oh-my-zsh.sh
 export ZSH_THEME_GIT_PROMPT_MODIFIED="%{$fg[yellow]%} ♜"
 export ZSH_THEME_GIT_PROMPT_UNMERGED="%{$fg[magenta]%} ♣"
 export ZSH_THEME_GIT_PROMPT_AHEAD="%{$fg[blue]%} ✤"
@@ -38,18 +38,11 @@ setopt HIST_REDUCE_BLANKS
 setopt HIST_NO_STORE
 setopt HIST_SAVE_NO_DUPS
 
-# enhancd
-[ -f ~/.enhancd ] && source ~/.enhancd/zsh/enhancd.zsh
+# zoxide (smarter cd; use `z <pattern>` to jump)
+command -v zoxide >/dev/null && eval "$(zoxide init zsh)"
 
-# fzf
+# fzf (Ctrl-R history search etc.)
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-# colordiff
-if [[ -x `which colordiff` ]]; then
-  alias diff='colordiff -u'
-else
-  alias diff='diff -u'
-fi
 
 # for golang
 export GOPATH=$HOME/go
@@ -58,38 +51,14 @@ export PATH=$PATH:$GOPATH/bin
 # for zsh
 bindkey -e
 
-# peco history search
-function peco-select-history() {
-	local tac
-	if which tac > /dev/null; then
-		tac="tac"
-	else
-		tac="tail -r"
-	fi
-	BUFFER=$(\history -n 1 | \
-	eval $tac | \
-	peco --query "$LBUFFER" | \
-  sed 's/\\n/\n/')
-	CURSOR=$#BUFFER
-	zle clear-screen
-}
+# zsh-syntax-highlighting (brew)
+for d in /opt/homebrew/share/zsh-syntax-highlighting /usr/local/share/zsh-syntax-highlighting; do
+  [ -f "$d/zsh-syntax-highlighting.zsh" ] && source "$d/zsh-syntax-highlighting.zsh" && break
+done
 
-zle -N peco-select-history
-bindkey '^r' peco-select-history
-
-# highlighting
-[ -f /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ] && \
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-# for direnv
-[ -f /usr/local/bin/direnv ] && \
-export EDITOR=vim &&
-eval "$(direnv hook zsh)"
-
-## for nvm
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+# direnv
+export EDITOR=vim
+command -v direnv >/dev/null && eval "$(direnv hook zsh)"
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
@@ -102,20 +71,17 @@ export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 # source aliases
 [ -f ~/.aliases ] && source ~/.aliases
 
-# for auto complete
+# completions
 fpath=($HOME/.zsh/completion $fpath)
+if command -v brew >/dev/null; then
+  fpath=("$(brew --prefix)/share/zsh-completions" "$(brew --prefix)/share/zsh/site-functions" $fpath)
+fi
 autoload -Uz compinit
 compinit
 
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/kz-scarlet/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/kz-scarlet/google-cloud-sdk/path.zsh.inc'; fi
+# Google Cloud SDK
+[ -f "$HOME/google-cloud-sdk/path.zsh.inc" ] && . "$HOME/google-cloud-sdk/path.zsh.inc"
+[ -f "$HOME/google-cloud-sdk/completion.zsh.inc" ] && . "$HOME/google-cloud-sdk/completion.zsh.inc"
 
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/kz-scarlet/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/kz-scarlet/google-cloud-sdk/completion.zsh.inc'; fi
-
-# for ruby
+# version manager
 eval "$(mise activate zsh)"
-
-# for nvm
-export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
