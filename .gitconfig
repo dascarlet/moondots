@@ -18,6 +18,18 @@
   excludesfile = ~/.gitignore
   whitespace = trailing-space,space-before-tab
 	commentChar = >
+	pager = delta
+
+[interactive]
+	diffFilter = delta --color-only
+
+[delta]
+	navigate = true
+	line-numbers = true
+	side-by-side = true
+
+[merge]
+	conflictstyle = zdiff3
 
 [fetch]
 	prune = true

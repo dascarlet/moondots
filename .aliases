@@ -14,7 +14,7 @@ alias gpu="git pull"
 alias gst="git status"
 alias gc="git commit -v"
 alias gd="git diff"
-alias gch='git branch -a --sort=-authordate | cut -b 3- | perl -pe '\''s#^remotes/origin/###'\'' | perl -nlE '\''say if !$c{$_}++'\'' | grep -v -- "->" | peco | xargs git checkout'
+alias gch='git branch -a --sort=-authordate | cut -b 3- | perl -pe '\''s#^remotes/origin/###'\'' | perl -nlE '\''say if !$c{$_}++'\'' | grep -v -- "->" | fzf | xargs git checkout'
 alias gpo='git push origin --set-upstream $(git rev-parse --abbrev-ref HEAD)'
 alias gmm='git merge main'
 
@@ -36,10 +36,6 @@ alias tn="trans :ja"
 
 # kubernetes
 alias k="kubectl"
-
-# python
-alias pip="pip3"
-alias python="python3"
 
 # terraform
 alias tf="terraform"
