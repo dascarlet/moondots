@@ -13,6 +13,10 @@
   lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
   review = diff origin/master...
   new = "!f() { git switch -c \"$1\" && git commit --allow-empty -m \"Initial empty commit\"; }; f"
+  pushup = "!git push origin --set-upstream $(git rev-parse --abbrev-ref HEAD)"
+  ch = "!git branch -a --sort=-authordate | cut -b 3- | perl -pe 's#^remotes/origin/###' | perl -nlE 'say if !$c{$_}++' | grep -v -- '->' | fzf | xargs git checkout"
+  merged = "!git branch --merged | grep -v '\\*' | xargs -I % git branch -d %"
+  prune-local = "!git branch | egrep -v '\\*|develop|master|main' | xargs git branch -D"
 
 [core]
   excludesfile = ~/.gitignore
@@ -40,7 +44,7 @@
 [commit]
 	verbose = true
 [url "git@github.com:"]
-	insteadOf = https://github.com/
+	pushInsteadOf = https://github.com/
 [pull]
 	rebase = false
 [diff "jupyternotebook"]

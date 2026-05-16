@@ -4,18 +4,15 @@ alias home="cd ~/Documents/"
 alias repos="cd ~/Documents/repos"
 
 ## git
+# 複合コマンドは .gitconfig [alias] に移動済み: pushup / ch / merged / prune-local
 alias g="git"
 alias greset="git reset --hard HEAD\^"
 alias gl="git log --color --graph"
 alias glog="git log"
-alias gmerged="git branch --merged | grep -v '*' | xargs -I % git branch -d %"
-alias glocal="git branch | egrep -v '\*|develop|master|main' | xargs git branch -D"
 alias gpu="git pull"
 alias gst="git status"
 alias gc="git commit -v"
 alias gd="git diff"
-alias gch='git branch -a --sort=-authordate | cut -b 3- | perl -pe '\''s#^remotes/origin/###'\'' | perl -nlE '\''say if !$c{$_}++'\'' | grep -v -- "->" | fzf | xargs git checkout'
-alias gpo='git push origin --set-upstream $(git rev-parse --abbrev-ref HEAD)'
 alias gmm='git merge main'
 
 ## zsh
